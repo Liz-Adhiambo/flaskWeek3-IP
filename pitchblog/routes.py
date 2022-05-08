@@ -1,10 +1,7 @@
-from flask import Flask, render_template, url_for,flash,redirect
-from config import SECRET_KEY
-from forms import RegistrationForm,LoginForm
-app = Flask(__name__)
-
-
-app.config['SECRET_KEY']='SECRET_KEY'
+from flask import render_template, url_for, flash, redirect
+from pitchblog import app
+from pitchblog.forms import RegistrationForm, LoginForm
+from pitchblog.models import User, Post
 
 posts = [
     {
@@ -55,7 +52,3 @@ def login():
 
 
 
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
